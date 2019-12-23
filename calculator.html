@@ -1,9 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Calculator Eith javascript</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+	<title>Calculator with javascript</title>
 </head>
 <body>
+   <div id="main">
+   	 <input type="text" id="number1" name="number1" value="">
+   	 <select id="sign" name="sign">
+   	 	<option value="add">
+   	 		Add
+   	 	</option>
+   	 	<option value="sub">
+   	 		Sub
+   	 	</option>
+   	 	<option value="mull">Mull</option>
+   	 	<option value="devi">Devide</option>
+   	 </select>
+   	 <input type="text" id="number2" name="number2" value="">
+   	
+   	 <button type="button" onclick="calculator()">=</button>
+   </div>
+    <button type="button" onclick="changeMainHtml()">click me </button>
+   <div id="answer">
+   	  
+   </div>
+
+<script >
+	/*
+	function calculator(){
+		let number1=document.querySelector('#number1');
+		let number2=document.querySelector('#number2');
+		let sign=document.querySelector('#sign');
+	    let ans ;
+		let answer=document.querySelector('#answer');
+		if (sign.value=='add') {
+
+			 ans=number2+number1 ;
+
+		}elseif(sign.value =='sub'){
+
+           ans=number1-nunber2 ;
+
+		}elseif(sign.value=='mull'){
+
+           ans=number1*number2 ;
+		}else{
+			ans=number1/number2 ;
+		}
+		console.log(ans);
+	}
+*/
+	function changeMainHtml() {
+	// Select the #main body 
+	var main = document.querySelector('#main');
+
+	// Two new sentences to toggle
+	var sentence1 = "Hello, thank you for changing me!";
+	var sentence2 = "Oh hello, I'm a different sentence!";
+
+	// If the innerHTML of #main matches sentence1, toggle it to sentence 2.
+	if(main.innerHTML == sentence1) {
+		main.innerHTML = sentence2;
+		main.style.padding = "50px";
+	} else {
+		// The innerHTML of #main did not match sentence1 (it's different),
+		// set it back to it's default "sentence1" content;
+		main.innerHTML = sentence1;
+		main.style.padding = "0px";
+	}
+}
+  function calculator(){
+  	let num1=document.querySelector('#number1');
+  	let answer=document.querySelector('#answer');
+  	console.log(num1.value);
+  	answer.innerHTML=num1.value;
+  }
+</script>
 
 </body>
 </html>
